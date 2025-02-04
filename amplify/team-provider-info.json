@@ -10,6 +10,14 @@
       "StackName": "amplify-nexuscloud-dev-5a48b",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:017820697458:stack/amplify-nexuscloud-dev-5a48b/196c2d10-e2e6-11ef-86fb-0a7b4c57f1cd",
       "AmplifyAppId": "d3sou9ly4kcspq"
+    },
+    "categories": {
+      "auth": {
+        "nexuscloud17c3e5c3": {}
+      },
+      "api": {
+        "nexuscloud": {}
+      }
     }
   }
 }
