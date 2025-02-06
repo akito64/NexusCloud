@@ -43,3 +43,13 @@ type Comment @model @auth(rules: [
   author: User @hasOne
   post: Post @belongsTo
 }
+
+type Event @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  description: String
+  startDate: AWSDateTime!
+  endDate: AWSDateTime!
+  location: String
+  owner: String
+}

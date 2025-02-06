@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@aws-amplify/ui-react": "^6.9.1",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
     "aws-amplify": "^6.12.3",
     "react-scripts": "^5.0.1"
   },

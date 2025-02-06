@@ -201,6 +201,19 @@ export const listComments = /* GraphQL */ `
     }
   }
 `;
+export const listEvents = /* GraphQL */ `
+  query ListEvents {
+    listEvents {
+      items {
+        id
+        title
+        startDate
+        endDate
+      }
+    }
+  }
+`;
+
 
 import { API, graphqlOperation } from 'aws-amplify';
 import { listPosts } from './graphql/queries';

@@ -373,3 +373,21 @@ export const deleteComment = /* GraphQL */ `
     }
   }
 `;
+export const createEvent = /* GraphQL */ `
+  mutation CreateEvent($input: CreateEventInput!) {
+    createEvent(input: $input) {
+      id
+      title
+      startDate
+      endDate
+    }
+  }
+`;
+
+export const deleteEvent = /* GraphQL */ `
+  mutation DeleteEvent($input: DeleteEventInput!) {
+    deleteEvent(input: $input) {
+      id
+    }
+  }
+`;
