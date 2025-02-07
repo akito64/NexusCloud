@@ -1,5 +1,5 @@
 import React from "react";
-import CalendarComponent from './CalendarComponent';
+import CalendarComponent from "./CalendarComponent"; // ここが正しく読み込まれているか確認
 
 function App() {
   return (
@@ -13,4 +13,3 @@ function App() {
 }
 
 export default App;
-
