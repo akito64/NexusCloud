@@ -12,10 +12,10 @@
     "mfaTypes": [
       "SMS Text Message"
     ],
-    "smsAuthenticationMessage": "あなたの認証コードは{####}です。",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "あなたの認証コード",
-    "emailVerificationMessage": "あなたの認証コードは {####} です。",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
@@ -36,7 +36,7 @@
     "sharedId": "17c3e5c3",
     "resourceName": "nexuscloud17c3e5c3",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
+    "useDefault": "default",
     "usernameAttributes": [
       "email"
     ],
@@ -99,8 +99,6 @@
         ]
       }
     ],
-    "thirdPartyAuth": true,
-    "authProviders": [],
     "userPoolGroups": true,
     "adminQueries": true,
     "triggers": {
@@ -117,19 +115,14 @@
         "verification-link"
       ]
     },
-    "hostedUI": true,
-    "hostedUIDomainName": "nexuscloud-login",
-    "authProvidersUserPool": [
-      "Google"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+    "hostedUI": false,
     "adminQueryGroup": "admin",
     "verificationBucketName": "nexuscloud17c3e5c3verificationbucket",
     "parentStack": {
       "Ref": "AWS::StackId"
     },
     "authTriggerConnections": "[\n  {\n    \"triggerType\": \"DefineAuthChallenge\",\n    \"lambdaFunctionName\": \"nexuscloud17c3e5c3DefineAuthChallenge\"\n  },\n  {\n    \"triggerType\": \"CreateAuthChallenge\",\n    \"lambdaFunctionName\": \"nexuscloud17c3e5c3CreateAuthChallenge\"\n  },\n  {\n    \"triggerType\": \"VerifyAuthChallengeResponse\",\n    \"lambdaFunctionName\": \"nexuscloud17c3e5c3VerifyAuthChallengeResponse\"\n  },\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"nexuscloud17c3e5c3CustomMessage\"\n  }\n]",
-    "permissions": []
+    "permissions": [],
+    "authProviders": []
   }
 }

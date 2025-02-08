@@ -1,15 +1,16 @@
-import React from "react";
-import CalendarComponent from "./CalendarComponent"; // ここが正しく読み込まれているか確認
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.innerHTML = `
+      <div style="text-align: center; margin-top: 50px;">
+          <h1>Welcome to NexusCloud</h1>
+          <div id="calendar"></div>
+          <p>This is a test deployment of our Amplify project.</p>
+          <button id="clickMe">Click Me</button>
+      </div>
+  `;
 
-function App() {
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Welcome to NexusCloud</h1>
-      <CalendarComponent />
-      <p>This is a test deployment of our Amplify project.</p>
-      <button onClick={() => alert("Hello!")}>Click Me</button>
-    </div>
-  );
-}
+  document.getElementById("clickMe").addEventListener("click", function () {
+      alert("Hello!");
+  });
 
-export default App;
+  // カレンダー機能を作成する（必要ならカレンダーライブラリを読み込む）
+});
