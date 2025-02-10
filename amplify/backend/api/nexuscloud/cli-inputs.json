@@ -6,14 +6,11 @@
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authnexuscloud17c3e5c3"
-<<<<<<< HEAD
-=======
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
         "type": "AUTOMERGE"
       }
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
     }
   }
 }

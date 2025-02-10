@@ -1,8 +1,5 @@
 {
     "Version": 5,
-<<<<<<< HEAD
-    "ElasticsearchWarning": true
-=======
     "ElasticsearchWarning": true,
     "ResolverConfig": {
         "project": {
@@ -10,5 +7,4 @@
             "ConflictDetection": "VERSION"
         }
     }
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
 }
