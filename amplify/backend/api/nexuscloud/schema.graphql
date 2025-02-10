@@ -43,3 +43,13 @@ type Comment @model @auth(rules: [
   author: User @hasOne
   post: Post @belongsTo
 }
+
+type Event @model @auth(rules: [
+  { allow: owner }, # 自分の予定のみ編集可能
+  { allow: groups, groups: ["Admins"], operations: [read, update, delete] } # 管理者は全操作可
+]) {
+  id: ID!
+  title: String!
+  date: AWSDate!
+  owner: String! # 誰がこの予定を作成したか
+}
