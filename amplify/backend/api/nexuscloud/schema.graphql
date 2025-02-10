@@ -44,6 +44,7 @@ type Comment @model @auth(rules: [
   post: Post @belongsTo
 }
 
+<<<<<<< HEAD
 type Event @model @auth(rules: [
   { allow: owner }, # 自分の予定のみ編集可能
   { allow: groups, groups: ["Admins"], operations: [read, update, delete] } # 管理者は全操作可
@@ -52,4 +53,14 @@ type Event @model @auth(rules: [
   title: String!
   date: AWSDate!
   owner: String! # 誰がこの予定を作成したか
+=======
+# 予定（Event）
+type Event @model @auth(rules: [
+  { allow: owner },
+  { allow: groups, groups: ["Admins"], operations: [read, update, delete] }
+]) {
+  id: ID!
+  description: String!  # "title" ではなく "description" に変更
+  date: AWSDateTime!  # AWSDate から AWSDateTime に変更（時間も扱える）
+>>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
 }
