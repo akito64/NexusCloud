@@ -1,16 +1,4 @@
 import React, { useState, useEffect } from "react";
-<<<<<<< HEAD
-
-const CalendarComponent = () => {
-  const [currentDate, setCurrentDate] = useState(new Date()); // 現在の月を管理
-  const [days, setDays] = useState([]);
-  const [events, setEvents] = useState({}); // 予定を保存
-
-  useEffect(() => {
-    generateDays();
-  }, [currentDate]); // `currentDate` が変わるたびにカレンダーを更新
-
-=======
 import { DataStore } from "@aws-amplify/datastore";
 import { Event } from "./models"; // `amplify push` で生成されたモデルをインポート
 
@@ -46,7 +34,6 @@ const CalendarComponent = () => {
   };
 
   // 🔹 カレンダーの日付を作成
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
   const generateDays = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
@@ -55,44 +42,12 @@ const CalendarComponent = () => {
 
     let tempDays = [];
     for (let i = 0; i < firstDay; i++) {
-<<<<<<< HEAD
-      tempDays.push(null); // 空白セル
-=======
       tempDays.push(null);
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
     }
     for (let i = 1; i <= lastDate; i++) {
       tempDays.push(i);
     }
 
-<<<<<<< HEAD
-    setDays(tempDays);
-  };
-
-  // 月を変更する関数
-  const changeMonth = (offset) => {
-    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + offset, 1));
-  };
-
-  // 予定を追加・削除する関数
-  const handleDayClick = (day) => {
-    if (!day) return;
-    const event = prompt("予定を入力してください:");
-    if (event) {
-      setEvents({ ...events, [`${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`]: event });
-    } else {
-      const newEvents = { ...events };
-      delete newEvents[`${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`];
-      setEvents(newEvents);
-    }
-  };
-
-  return (
-    <div>
-      <h2>予定を追加できるカレンダー</h2>
-
-      {/* 月変更ボタン */}
-=======
     return tempDays;
   };
 
@@ -141,17 +96,13 @@ const CalendarComponent = () => {
       <h2>予定を AWS に保存するカレンダー</h2>
 
       {/* 🔹 月変更ボタン */}
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
       <div className="calendar-controls">
         <button onClick={() => changeMonth(-1)}>⬅ 前の月</button>
         <span>{currentDate.getFullYear()}年 {currentDate.getMonth() + 1}月</span>
         <button onClick={() => changeMonth(1)}>次の月 ➡</button>
       </div>
 
-<<<<<<< HEAD
-=======
       {/* 🔹 カレンダー表示 */}
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
       <table className="calendar-table">
         <thead>
           <tr>
@@ -165,14 +116,6 @@ const CalendarComponent = () => {
           </tr>
         </thead>
         <tbody>
-<<<<<<< HEAD
-          {Array.from({ length: Math.ceil(days.length / 7) }).map((_, rowIndex) => (
-            <tr key={rowIndex}>
-              {days.slice(rowIndex * 7, rowIndex * 7 + 7).map((day, index) => (
-                <td key={index} onClick={() => handleDayClick(day)} className="calendar-day">
-                  {day}
-                  <div className="event">{events[`${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`]}</div>
-=======
           {Array.from({ length: Math.ceil(generateDays().length / 7) }).map((_, rowIndex) => (
             <tr key={rowIndex}>
               {generateDays().slice(rowIndex * 7, rowIndex * 7 + 7).map((day, index) => (
@@ -188,15 +131,12 @@ const CalendarComponent = () => {
                       )}
                     </div>
                   )}
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
                 </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
-<<<<<<< HEAD
-=======
 
       {/* 🔹 予定追加ポップアップ */}
       {showPopup && (
@@ -213,7 +153,6 @@ const CalendarComponent = () => {
           </div>
         </div>
       )}
->>>>>>> dad895d9 (カレンダー機能の改善と予定の保存機能を追加)
     </div>
   );
 };
